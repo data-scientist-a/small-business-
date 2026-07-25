@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Transaction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Farm Finance Enterprise</h1>
+    <nav>
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('income') }}" class="active">Income & Expenses</a>
+      <a href="{{ url_for('reports') }}">Reports</a>
+    </nav>
+  </header>
+
+  <section class="card">
+    <h2>Record New Transaction</h2>
+    <form method="POST">
+      <label>Date: <input type="date" name="date" required></label><br>
+      <label>Category:
+        <select name="category">
+          <option value="Sale">Sale</option>
+          <option value="Expense">Expense</option>
+        </select>
+      </label><br>
+      <label>Description: <input type="text" name="description" required></label><br>
+      <label>Amount: <input type="number" step="0.01" name="amount" required></label><br>
+      <button type="submit">Save Transaction</button>
+    </form>
+  </section>
+</body>
+</html>
