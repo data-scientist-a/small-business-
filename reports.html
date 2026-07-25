@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reports</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Farm Finance Enterprise</h1>
+    <nav>
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('income') }}">Income & Expenses</a>
+      <a href="{{ url_for('reports') }}" class="active">Reports</a>
+    </nav>
+  </header>
+
+  <section class="card">
+    <h2>Financial Summary</h2>
+    <p><strong>Total Revenue:</strong> ${{ revenue }}</p>
+    <p><strong>Total Expenses:</strong> ${{ expenses }}</p>
+    <p><strong>Net Profit:</strong> ${{ profit }}</p>
+  </section>
+</body>
+</html>
